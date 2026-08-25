@@ -1,0 +1,273 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-canvas: #090d16;
+    --bg-surface: #0f1626;
+    --bg-elevated: #162035;
+    --border-subtle: rgba(255, 255, 255, 0.07);
+    --border-default: rgba(255, 255, 255, 0.12);
+  }
+
+  html.light,
+  html[data-theme="light"] {
+    --bg-canvas: #f8fafc;
+    --bg-surface: #ffffff;
+    --bg-elevated: #f1f5f9;
+    --border-subtle: rgba(15, 23, 42, 0.08);
+    --border-default: rgba(15, 23, 42, 0.15);
+  }
+
+  body {
+    background-color: #090d16;
+    color: #f8fafc;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  html.light body,
+  html[data-theme="light"] body {
+    background-color: #f8fafc;
+    color: #0f172a;
+  }
+
+  html.dark body,
+  html[data-theme="dark"] body {
+    background-color: #090d16;
+    color: #f8fafc;
+  }
+
+  /* Custom scrollbar for enterprise tables & sidebars */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  html.dark ::-webkit-scrollbar-track,
+  html:not(.light) ::-webkit-scrollbar-track {
+    background: #090d16;
+  }
+  html.light ::-webkit-scrollbar-track,
+  html[data-theme="light"] ::-webkit-scrollbar-track {
+    background: #f1f5f9;
+  }
+  html.dark ::-webkit-scrollbar-thumb,
+  html:not(.light) ::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 9999px;
+  }
+  html.light ::-webkit-scrollbar-thumb,
+  html[data-theme="light"] ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+  }
+}
+
+/* =========================================================================
+   COMPREHENSIVE GLOBAL LIGHT MODE ENGINE
+   Seamlessly transforms dark cards, sidebars, charts, panels & text into
+   crisp, executive high-contrast daytime light mode styling.
+   ========================================================================= */
+
+html.light,
+html[data-theme="light"] {
+  /* Canvas & Page Root */
+  #fundatiq-app-root,
+  #fundatiq-main-canvas,
+  #landing-hero-root,
+  #enterprise-security-gate-view,
+  main {
+    background-color: #f8fafc !important;
+    color: #0f172a !important;
+  }
+
+  /* Universal Dark Background Overrides -> Crisp White / Soft Slate Surfaces */
+  [class*="bg-[#090d16]"]:not(.bg-clip-text),
+  [class*="bg-[#070b14]"]:not(.bg-clip-text),
+  [class*="bg-[#060911]"]:not(.bg-clip-text),
+  [class*="bg-[#080c18]"]:not(.bg-clip-text),
+  [class*="bg-[#0a0f1d]"]:not(.bg-clip-text),
+  [class*="bg-[#0b101c]"]:not(.bg-clip-text),
+  [class*="bg-[#0b1120]"]:not(.bg-clip-text),
+  [class*="bg-[#0c1220]"]:not(.bg-clip-text),
+  [class*="bg-[#0d1424]"]:not(.bg-clip-text),
+  [class*="bg-[#080d17]"]:not(.bg-clip-text) {
+    background-color: #f1f5f9 !important;
+  }
+
+  [class*="bg-[#0e1628]"]:not(.bg-clip-text),
+  [class*="bg-[#0f1626]"]:not(.bg-clip-text),
+  [class*="bg-[#10182b]"]:not(.bg-clip-text),
+  [class*="bg-[#111a2e]"]:not(.bg-clip-text),
+  [class*="bg-[#121929]"]:not(.bg-clip-text),
+  [class*="bg-[#131c2e]"]:not(.bg-clip-text),
+  [class*="bg-[#141c2e]"]:not(.bg-clip-text),
+  [class*="bg-[#162035]"]:not(.bg-clip-text),
+  [class*="bg-[#19243b]"]:not(.bg-clip-text),
+  [class*="bg-[#1a2438]"]:not(.bg-clip-text),
+  [class*="bg-slate-900"]:not(.bg-clip-text):not(.bg-blue-600),
+  [class*="bg-slate-950"]:not(.bg-clip-text),
+  [class*="bg-slate-800"]:not(.bg-clip-text):not(.bg-blue-600) {
+    background-color: #ffffff !important;
+  }
+
+  /* Cards, Panels, Modules and Grids */
+  .rounded-xl.border:not(button):not(.bg-blue-600):not(.bg-emerald-600):not(.bg-amber-600):not(.bg-rose-600),
+  .rounded-2xl.border:not(button):not(.bg-blue-600):not(.bg-emerald-600):not(.bg-amber-600):not(.bg-rose-600),
+  .rounded-lg.border:not(button):not(.bg-blue-600):not(.bg-emerald-600):not(.bg-amber-600):not(.bg-rose-600) {
+    background-color: #ffffff !important;
+    border-color: #e2e8f0 !important;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.03) !important;
+  }
+
+  /* Maintain Gradient Text & Buttons */
+  .bg-clip-text.text-transparent {
+    background-color: transparent !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
+  }
+
+  /* Hero Headline Gradient text in Light Mode: Vibrant high-contrast Blue/Indigo/Emerald */
+  .bg-clip-text.text-transparent[class*="from-blue-"],
+  .bg-clip-text.text-transparent[class*="from-cyan-"] {
+    background-image: linear-gradient(135deg, #1d4ed8 0%, #4338ca 50%, #059669 100%) !important;
+  }
+
+  /* Universal Dark Borders -> Clean Slate-200 */
+  [class*="border-[#1a2337]"],
+  [class*="border-[#1b2a47]"],
+  [class*="border-[#1c2944]"],
+  [class*="border-[#1d2b48]"],
+  [class*="border-[#1e2a42]"],
+  [class*="border-[#1e2a44]"],
+  [class*="border-[#1e2e4f]"],
+  [class*="border-[#18233c]"],
+  [class*="border-[#18263f]"],
+  [class*="border-[#162035]"],
+  [class*="border-[#162238]"],
+  [class*="border-[#141e33]"],
+  [class*="border-slate-800"],
+  [class*="border-slate-700"],
+  [class*="border-slate-700/60"],
+  [class*="border-slate-800/80"],
+  [class*="border-slate-800/60"] {
+    border-color: #e2e8f0 !important;
+  }
+
+  /* Text & Typography Contrast Overrides */
+  .text-white:not(.text-white-force):not(button.bg-blue-600 *):not(button.bg-emerald-600 *):not(button.bg-rose-600 *):not(button.bg-indigo-600 *):not([class*="bg-blue-600"] *):not([class*="bg-gradient-to-"] *),
+  h1:not(.bg-clip-text),
+  h2:not(.bg-clip-text),
+  h3:not(.bg-clip-text),
+  h4:not(.bg-clip-text),
+  [class*="text-slate-100"]:not(.text-white-force):not(button.bg-blue-600 *) {
+    color: #0f172a !important;
+  }
+
+  .text-slate-200 {
+    color: #1e293b !important;
+  }
+
+  .text-slate-300 {
+    color: #334155 !important;
+  }
+
+  .text-slate-400 {
+    color: #475569 !important;
+  }
+
+  /* Keep solid colored button labels pure white */
+  .bg-blue-600,
+  .bg-indigo-600,
+  .bg-emerald-600,
+  .bg-rose-600,
+  button[class*="bg-blue-600"],
+  button[class*="bg-emerald-600"],
+  button[class*="bg-gradient-to-r"] {
+    color: #ffffff !important;
+  }
+
+  button[class*="bg-gradient-to-r"] * {
+    color: #ffffff !important;
+  }
+
+  /* Tables & Ledger */
+  table {
+    border-color: #e2e8f0 !important;
+  }
+
+  table thead th,
+  th {
+    background-color: #f8fafc !important;
+    color: #334155 !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+  }
+
+  table tbody tr,
+  tr {
+    border-bottom: 1px solid #f1f5f9 !important;
+    background-color: #ffffff !important;
+  }
+
+  table tbody tr:hover,
+  tr:hover {
+    background-color: #f8fafc !important;
+  }
+
+  table td,
+  td {
+    color: #1e293b !important;
+    border-color: #f1f5f9 !important;
+  }
+
+  /* Inputs, Search Bars & Filters */
+  input:not([type="checkbox"]):not([type="radio"]),
+  select,
+  textarea {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    border-color: #cbd5e1 !important;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: #94a3b8 !important;
+  }
+
+  /* Hover States for Interactive Elements */
+  [class*="hover:bg-[#141c2e]"]:hover,
+  [class*="hover:bg-[#121b30]"]:hover,
+  [class*="hover:bg-[#16223b]"]:hover,
+  [class*="hover:bg-[#19243b]"]:hover,
+  [class*="hover:bg-[#14203a]"]:hover,
+  [class*="hover:bg-[#121929]"]:hover,
+  [class*="hover:bg-[#111a2e]"]:hover,
+  [class*="hover:bg-[#15223e]"]:hover {
+    background-color: #f1f5f9 !important;
+    color: #0f172a !important;
+  }
+
+  /* Subtle Shadows for Light Mode */
+  .shadow-2xl,
+  .shadow-xl,
+  .shadow-lg,
+  [class*="shadow-black"],
+  [class*="shadow-blue-950"] {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.06), 0 2px 4px -2px rgba(0, 0, 0, 0.04) !important;
+  }
+
+  /* Footer */
+  footer {
+    background-color: #ffffff !important;
+    border-color: #e2e8f0 !important;
+    color: #475569 !important;
+  }
+}
