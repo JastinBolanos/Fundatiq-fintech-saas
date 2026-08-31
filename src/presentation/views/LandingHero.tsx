@@ -70,7 +70,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
           className="flex items-center gap-3 text-left cursor-pointer group focus:outline-hidden hover:opacity-90 transition-opacity"
           title={language === 'es' ? 'Ir al inicio' : 'Scroll to top'}
         >
-          <AnimatedLogo containerClassName="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 via-blue-700 to-emerald-600 text-white shadow-lg shadow-blue-950/60 border border-blue-400/30 group-hover:scale-105 transition-transform" />
+          <AnimatedLogo containerClassName="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 via-blue-700 to-emerald-600 text-white shadow-lg shadow-blue-950/60 ring-1 ring-inset ring-white/25 group-hover:scale-105 transition-transform" />
           <div className="flex flex-col">
             <div className="flex items-center gap-2">
               <span className={`font-bold text-lg tracking-tight font-mono group-hover:text-blue-500 transition-colors ${isLight ? 'text-slate-900' : 'text-white'}`}>
@@ -133,7 +133,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
           <button
             id="header-client-portal-btn"
             onClick={onGetStarted}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 active:scale-[0.98] shadow-md shadow-blue-900/40 hover:shadow-blue-500/20 transition-all cursor-pointer border border-blue-400/30 text-white-force"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-semibold text-white bg-gradient-to-r from-blue-600 via-blue-500 to-emerald-500 hover:from-blue-500 hover:via-blue-400 hover:to-emerald-400 active:scale-[0.98] shadow-md shadow-blue-950/40 hover:shadow-blue-500/25 transition-all duration-200 cursor-pointer ring-1 ring-inset ring-white/20 hover:ring-white/30 overflow-hidden text-white-force"
           >
             <Lock size={13} className="text-amber-300" />
             <span>{language === 'es' ? 'Portal de Clientes' : 'Client Portal'}</span>
@@ -196,11 +196,11 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
             <button
               id="hero-primary-cta"
               onClick={onGetStarted}
-              className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-blue-600 via-blue-500 to-emerald-600 hover:from-blue-500 hover:via-blue-400 hover:to-emerald-500 shadow-xl shadow-blue-900/50 hover:shadow-blue-500/30 hover:scale-105 active:scale-[0.98] transition-all duration-300 border border-blue-400/30 cursor-pointer text-white-force"
+              className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-blue-600 via-blue-500 to-emerald-500 hover:from-blue-500 hover:via-blue-400 hover:to-emerald-400 shadow-xl shadow-blue-950/60 hover:shadow-blue-500/25 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 ring-1 ring-inset ring-white/25 hover:ring-white/35 overflow-hidden cursor-pointer text-white-force"
             >
-              <Lock size={16} className="text-amber-300 group-hover:scale-110 transition-transform duration-300" />
+              <Lock size={16} className="text-amber-300 group-hover:scale-110 transition-transform duration-200" />
               <span>{t.landing.enterApp}</span>
-              <ArrowRight size={18} className="text-white group-hover:translate-x-1 transition-transform duration-300" />
+              <ArrowRight size={18} className="text-white group-hover:translate-x-0.5 transition-transform duration-200" />
             </button>
 
             <button

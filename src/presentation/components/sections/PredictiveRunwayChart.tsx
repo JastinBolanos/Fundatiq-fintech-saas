@@ -1169,8 +1169,8 @@ export const PredictiveRunwayChart: React.FC<PredictiveRunwayChartProps> = ({
                   onClick={() => handleTimeframeClick(tf)}
                   className={`px-3.5 py-1.5 text-xs font-mono font-semibold rounded-lg transition-all duration-200 cursor-pointer ${
                     isActive
-                      ? 'bg-blue-600 text-white shadow-lg shadow-blue-900/50 border border-blue-400/30'
-                      : 'text-slate-400 hover:text-slate-200 hover:bg-[#11192b] border border-transparent'
+                      ? 'bg-blue-600 text-white shadow-md shadow-blue-950/60 ring-1 ring-inset ring-white/20'
+                      : 'text-slate-400 hover:text-slate-200 hover:bg-[#11192b]'
                   }`}
                 >
                   {tf}

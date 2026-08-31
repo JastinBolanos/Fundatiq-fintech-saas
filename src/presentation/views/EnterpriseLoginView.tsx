@@ -102,7 +102,7 @@ export const EnterpriseLoginView: React.FC<EnterpriseLoginViewProps> = ({
           className="flex items-center gap-3 text-left cursor-pointer group focus:outline-hidden hover:opacity-90 transition-opacity"
           title={isEs ? 'Ir al inicio / Welcome' : 'Go to Welcome / Landing'}
         >
-          <AnimatedLogo containerClassName="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 via-blue-700 to-emerald-600 text-white shadow-lg shadow-blue-950/60 border border-blue-400/30 group-hover:scale-105 transition-transform" />
+          <AnimatedLogo containerClassName="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 via-blue-700 to-emerald-600 text-white shadow-lg shadow-blue-950/60 ring-1 ring-inset ring-white/25 group-hover:scale-105 transition-transform" />
           <div>
             <div className="flex items-center gap-2">
               <span className="font-mono font-bold tracking-tight text-white text-base group-hover:text-blue-400 transition-colors">

@@ -10,7 +10,7 @@ interface AnimatedLogoProps {
 
 export const AnimatedLogo: React.FC<AnimatedLogoProps> = ({
   className = '',
-  containerClassName = 'w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 via-blue-700 to-emerald-600 text-white shadow-lg shadow-blue-950/60 border border-blue-400/30',
+  containerClassName = 'w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 via-blue-700 to-emerald-600 text-white shadow-lg shadow-blue-950/60 ring-1 ring-inset ring-white/25',
   iconClassName = 'w-5 h-5 text-blue-100',
 }) => {
   return (
