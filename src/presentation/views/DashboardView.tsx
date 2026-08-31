@@ -139,7 +139,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           </div>
 
           <div className="space-y-1.5 my-2">
-            <div className="text-2xl lg:text-3xl font-extrabold text-blue-400 font-mono tracking-tight group-hover:text-blue-300 transition-colors">
+            <div className="text-2xl lg:text-3xl font-semibold text-blue-400 font-mono tracking-tight group-hover:text-blue-300 transition-colors">
               $148,420,000.00
             </div>
             <div className="text-[11px] text-slate-400 font-medium truncate">
@@ -173,7 +173,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           </div>
 
           <div className="space-y-1.5 my-2">
-            <div className="text-2xl lg:text-3xl font-extrabold text-rose-400 font-mono tracking-tight group-hover:text-rose-300 transition-colors">
+            <div className="text-2xl lg:text-3xl font-semibold text-rose-400 font-mono tracking-tight group-hover:text-rose-300 transition-colors">
               $3,180,000.00
             </div>
             <div className="text-[11px] text-slate-400 font-medium truncate">
@@ -207,7 +207,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           </div>
 
           <div className="space-y-1.5 my-2">
-            <div className="text-2xl lg:text-3xl font-extrabold text-emerald-400 font-mono tracking-tight group-hover:text-emerald-300 transition-colors">
+            <div className="text-2xl lg:text-3xl font-semibold text-emerald-400 font-mono tracking-tight group-hover:text-emerald-300 transition-colors">
               {language === 'es' ? '24.8 Meses' : '24.8 Months'}
             </div>
             <div className="text-[11px] text-slate-400 font-medium truncate">
@@ -241,7 +241,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           </div>
 
           <div className="space-y-1.5 my-2">
-            <div className="text-2xl lg:text-3xl font-extrabold text-white font-mono tracking-tight group-hover:text-cyan-300 transition-colors">
+            <div className="text-2xl lg:text-3xl font-semibold text-white font-mono tracking-tight group-hover:text-cyan-300 transition-colors">
               5.28% APY
             </div>
             <div className="text-[11px] text-slate-400 font-medium truncate">

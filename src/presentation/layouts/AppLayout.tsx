@@ -8,6 +8,7 @@ import { useTheme } from '../context/ThemeContext';
 interface AppLayoutProps {
   currentView: NavItemKey;
   onNavigate: (key: NavItemKey) => void;
+  onGoHome?: () => void;
   organization?: OrganizationContext;
   user?: UserProfile;
   children: React.ReactNode;
@@ -34,6 +35,7 @@ const DEFAULT_USER: UserProfile = {
 export const AppLayout: React.FC<AppLayoutProps> = ({
   currentView,
   onNavigate,
+  onGoHome,
   organization = DEFAULT_ORG,
   user = DEFAULT_USER,
   children,
@@ -55,6 +57,7 @@ export const AppLayout: React.FC<AppLayoutProps> = ({
         <Sidebar
           activeKey={currentView}
           onNavigate={onNavigate}
+          onGoHome={onGoHome}
           organization={organization}
           user={user}
           isCollapsed={sidebarCollapsed}
@@ -76,6 +79,10 @@ export const AppLayout: React.FC<AppLayoutProps> = ({
               activeKey={currentView}
               onNavigate={(key) => {
                 onNavigate(key);
+                setMobileSidebarOpen(false);
+              }}
+              onGoHome={() => {
+                if (onGoHome) onGoHome();
                 setMobileSidebarOpen(false);
               }}
               organization={organization}

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { AnimatedLogo } from '../components/AnimatedLogo';
 import {
   ArrowRight,
   Zap,
@@ -63,50 +64,43 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
 
       {/* Top Public Header Navigation */}
       <header className="relative z-20 max-w-7xl mx-auto w-full px-6 py-6 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 via-blue-700 to-emerald-600 text-white shadow-lg shadow-blue-950/60 border border-blue-400/30">
-            <Layers className="w-5 h-5 text-blue-100" />
-          </div>
+        <button
+          type="button"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="flex items-center gap-3 text-left cursor-pointer group focus:outline-hidden hover:opacity-90 transition-opacity"
+          title={language === 'es' ? 'Ir al inicio' : 'Scroll to top'}
+        >
+          <AnimatedLogo containerClassName="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 via-blue-700 to-emerald-600 text-white shadow-lg shadow-blue-950/60 border border-blue-400/30 group-hover:scale-105 transition-transform" />
           <div className="flex flex-col">
             <div className="flex items-center gap-2">
-              <span className={`font-bold text-lg tracking-tight font-mono ${isLight ? 'text-slate-900' : 'text-white'}`}>
+              <span className={`font-bold text-lg tracking-tight font-mono group-hover:text-blue-500 transition-colors ${isLight ? 'text-slate-900' : 'text-white'}`}>
                 FUNDATIQ
-              </span>
-              <span className="px-1.5 py-0.5 text-[9px] font-mono font-semibold uppercase bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 rounded">
-                v2.4 Live
               </span>
             </div>
             <span className={`text-[10px] font-mono tracking-wide ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
               {language === 'es' ? 'Flujo de Caja y Tesorería Corporativa' : 'Corporate Cash Flow & Treasury'}
             </span>
           </div>
-        </div>
+        </button>
 
-        {/* Public Navigation Links */}
-        <nav className={`hidden md:flex items-center gap-8 text-xs font-medium ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
-          <a
-            href="#features"
-            className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-pointer"
-          >
-            {language === 'es' ? 'Motor de Tesorería' : 'Treasury Engine'}
-          </a>
-          <a
-            href="#forecast"
-            className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-pointer"
-          >
-            {language === 'es' ? 'Pista Predictiva' : 'Predictive Runway'}
-          </a>
-          <a
-            href="#security"
-            className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-pointer flex items-center gap-1.5"
-          >
-            <ShieldCheck size={14} className="text-emerald-500 dark:text-emerald-400" />
-            <span>SOC 2 Type II</span>
-          </a>
-        </nav>
+        {/* Right Header Navigation & Action CTAs */}
+        <div className="flex items-center gap-4 sm:gap-5">
+          {/* Public Navigation Links */}
+          <nav className={`hidden md:flex items-center gap-6 text-xs font-medium mr-1 ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+            <a
+              href="#features"
+              className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-pointer"
+            >
+              {language === 'es' ? 'Motor de Tesorería' : 'Treasury Engine'}
+            </a>
+            <a
+              href="#forecast"
+              className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-pointer"
+            >
+              {language === 'es' ? 'Pista Predictiva' : 'Predictive Runway'}
+            </a>
+          </nav>
 
-        {/* Header Action CTAs */}
-        <div className="flex items-center gap-2 sm:gap-3">
           {/* Quick Language Toggle */}
           <button
             id="landing-language-toggle-btn"
@@ -134,19 +128,6 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
             }`}
           >
             <span>{theme === 'dark' ? t.nav.lightModeLabel : t.nav.darkModeLabel}</span>
-          </button>
-
-          <button
-            id="header-live-demo-btn"
-            onClick={onExploreDemo || onGetStarted}
-            className={`hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs font-medium transition-all cursor-pointer ${
-              isLight
-                ? 'bg-white hover:bg-slate-100 text-slate-700 border border-slate-300'
-                : 'bg-transparent text-slate-300 hover:text-white hover:bg-[#121929] border border-[#1e2a42]'
-            }`}
-          >
-            <span>{language === 'es' ? 'Demostración en Vivo' : 'Live Demo'}</span>
-            <ArrowUpRight size={13} className="text-blue-500 dark:text-blue-400" />
           </button>
 
           <button
@@ -348,7 +329,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
                           +8.4% MoM
                         </span>
                       </div>
-                      <div className={`text-2xl sm:text-3xl font-extrabold font-mono tracking-tight ${isLight ? 'text-slate-900' : 'text-white'}`}>
+                      <div className={`text-2xl sm:text-3xl font-semibold font-mono tracking-tight ${isLight ? 'text-slate-900' : 'text-white'}`}>
                         $148,420,000.00
                       </div>
                       <div className={`text-[11px] flex items-center gap-1 font-mono ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
@@ -369,7 +350,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
                           {language === 'es' ? 'Alta Velocidad' : 'High Velocity'}
                         </span>
                       </div>
-                      <div className="text-2xl sm:text-3xl font-extrabold text-emerald-600 dark:text-emerald-400 font-mono tracking-tight">
+                      <div className={`text-2xl sm:text-3xl font-semibold font-mono tracking-tight ${isLight ? 'text-slate-900' : 'text-white'}`}>
                         +$24,815,900.00
                       </div>
                       <div className={`text-[11px] flex items-center gap-1 font-mono ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
@@ -390,7 +371,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
                           +5.25% APY
                         </span>
                       </div>
-                      <div className="text-2xl sm:text-3xl font-extrabold text-amber-600 dark:text-amber-400 font-mono tracking-tight">
+                      <div className={`text-2xl sm:text-3xl font-semibold font-mono tracking-tight ${isLight ? 'text-slate-900' : 'text-white'}`}>
                         +$1,420,500.00
                       </div>
                       <div className={`text-[11px] flex items-center gap-1 font-mono ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
@@ -487,7 +468,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
                           {language === 'es' ? 'Confianza 98%' : 'Confidence 98%'}
                         </span>
                       </div>
-                      <div className="text-2xl sm:text-3xl font-extrabold text-blue-600 dark:text-blue-400 font-mono tracking-tight">
+                      <div className={`text-2xl sm:text-3xl font-semibold font-mono tracking-tight ${isLight ? 'text-slate-900' : 'text-white'}`}>
                         {language === 'es' ? '24.8 Meses' : '24.8 Months'}
                       </div>
                       <div className={`text-[11px] flex items-center gap-1 font-mono ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
@@ -508,7 +489,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
                           {language === 'es' ? 'Optimizado' : 'Optimized'}
                         </span>
                       </div>
-                      <div className={`text-2xl sm:text-3xl font-extrabold font-mono tracking-tight ${isLight ? 'text-slate-900' : 'text-white'}`}>
+                      <div className={`text-2xl sm:text-3xl font-semibold font-mono tracking-tight ${isLight ? 'text-slate-900' : 'text-white'}`}>
                         $5,980,000.00
                       </div>
                       <div className={`text-[11px] flex items-center gap-1 font-mono ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
@@ -529,7 +510,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
                           {language === 'es' ? 'Ultra Seguro' : 'Ultra Resilient'}
                         </span>
                       </div>
-                      <div className="text-2xl sm:text-3xl font-extrabold text-emerald-600 dark:text-emerald-400 font-mono tracking-tight">
+                      <div className={`text-2xl sm:text-3xl font-semibold font-mono tracking-tight ${isLight ? 'text-slate-900' : 'text-white'}`}>
                         +$38,500,000.00
                       </div>
                       <div className={`text-[11px] flex items-center gap-1 font-mono ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
@@ -622,7 +603,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
                           100% {language === 'es' ? 'Ejecutado' : 'Executed'}
                         </span>
                       </div>
-                      <div className="text-2xl sm:text-3xl font-extrabold text-cyan-600 dark:text-cyan-400 font-mono tracking-tight">
+                      <div className={`text-2xl sm:text-3xl font-semibold font-mono tracking-tight ${isLight ? 'text-slate-900' : 'text-white'}`}>
                         $42,150,000.00
                       </div>
                       <div className={`text-[11px] flex items-center gap-1 font-mono ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
@@ -643,7 +624,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
                           {language === 'es' ? 'Cero Fricción FX' : 'Zero FX Wire Fees'}
                         </span>
                       </div>
-                      <div className="text-2xl sm:text-3xl font-extrabold text-emerald-600 dark:text-emerald-400 font-mono tracking-tight">
+                      <div className={`text-2xl sm:text-3xl font-semibold font-mono tracking-tight ${isLight ? 'text-slate-900' : 'text-white'}`}>
                         +$840,000.00
                       </div>
                       <div className={`text-[11px] flex items-center gap-1 font-mono ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
@@ -664,7 +645,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
                           {language === 'es' ? 'Precisión Óptima' : 'Optimal'}
                         </span>
                       </div>
-                      <div className={`text-2xl sm:text-3xl font-extrabold font-mono tracking-tight ${isLight ? 'text-slate-900' : 'text-white'}`}>
+                      <div className={`text-2xl sm:text-3xl font-semibold font-mono tracking-tight ${isLight ? 'text-slate-900' : 'text-white'}`}>
                         &lt; 0.01%
                       </div>
                       <div className={`text-[11px] flex items-center gap-1 font-mono ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
@@ -755,13 +736,11 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
           <div className="flex items-center gap-2">
             <ShieldCheck size={16} className="text-emerald-500 dark:text-emerald-400" />
             <span className={isLight ? 'text-slate-700 font-medium' : 'text-slate-300'}>
-              Enterprise Grade: ISO 27001 • SOC 2 Type II • FedNow Ready
+              Enterprise Grade: ISO 27001 • SOC 2 Type II
             </span>
           </div>
 
           <div className="flex items-center gap-6">
-            <span>{language === 'es' ? 'Cifrado AES-256 GCM' : 'Encrypted AES-256 GCM'}</span>
-            <span>{language === 'es' ? 'Hub Global Multidivisa' : 'Global Multi-Currency Hub'}</span>
             <span className="text-blue-600 dark:text-blue-400 font-bold">© 2026 Fundatiq Inc.</span>
           </div>
         </div>

@@ -7,7 +7,6 @@ import {
   SlidersHorizontal,
   Download,
   Plus,
-  ShieldCheck,
   Globe,
   CheckCircle2,
   Calendar,
@@ -260,18 +259,6 @@ export const Topbar: React.FC<TopbarProps> = ({
           <Bell size={16} />
           <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-blue-500 border border-white dark:border-[#090d16]" />
         </button>
-
-        {/* Security & SOC 2 Verified Badge */}
-        <div
-          className={`hidden xl:flex items-center gap-1 text-[11px] font-mono px-2 py-1 rounded border ${
-            isLight
-              ? 'bg-slate-100 text-slate-600 border-slate-200'
-              : 'bg-[#0a0f1d] text-slate-400 border-slate-800/80'
-          }`}
-        >
-          <ShieldCheck size={13} className="text-emerald-500 dark:text-emerald-400" />
-          <span>{t.nav.soc2Badge}</span>
-        </div>
       </div>
     </header>
   );

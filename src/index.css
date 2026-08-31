@@ -185,12 +185,16 @@ html[data-theme="light"] {
   }
 
   /* Keep solid colored button labels pure white */
-  .bg-blue-600,
-  .bg-indigo-600,
-  .bg-emerald-600,
-  .bg-rose-600,
-  button[class*="bg-blue-600"],
-  button[class*="bg-emerald-600"],
+  button.bg-blue-600,
+  button.bg-indigo-600,
+  button.bg-emerald-600,
+  button.bg-rose-600,
+  .bg-blue-600:not([class*="/"]),
+  .bg-indigo-600:not([class*="/"]),
+  .bg-emerald-600:not([class*="/"]),
+  .bg-rose-600:not([class*="/"]),
+  button[class~="bg-blue-600"],
+  button[class~="bg-emerald-600"],
   button[class*="bg-gradient-to-r"] {
     color: #ffffff !important;
   }

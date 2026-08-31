@@ -63,7 +63,7 @@ export const StatCard: React.FC<StatCardProps> = ({
         {icon && <div className="shrink-0">{icon}</div>}
       </div>
 
-      <div className={`text-2xl font-bold font-mono tracking-tight ${isLight ? 'text-slate-900' : 'text-white'}`}>
+      <div className={`text-2xl font-semibold font-mono tracking-tight ${isLight ? 'text-slate-900' : 'text-white'}`}>
         {value}
       </div>
 

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { AnimatedLogo } from '../components/AnimatedLogo';
 import {
   Lock,
   Shield,
@@ -95,24 +96,24 @@ export const EnterpriseLoginView: React.FC<EnterpriseLoginViewProps> = ({
 
       {/* Top Header / Brand Gating */}
       <header className="relative z-10 w-full max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-900 border border-slate-700/80 shadow-md shadow-black">
-            <Shield className="h-5 w-5 text-[#d4af37]" />
-          </div>
+        <button
+          type="button"
+          onClick={onBackToLanding}
+          className="flex items-center gap-3 text-left cursor-pointer group focus:outline-hidden hover:opacity-90 transition-opacity"
+          title={isEs ? 'Ir al inicio / Welcome' : 'Go to Welcome / Landing'}
+        >
+          <AnimatedLogo containerClassName="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 via-blue-700 to-emerald-600 text-white shadow-lg shadow-blue-950/60 border border-blue-400/30 group-hover:scale-105 transition-transform" />
           <div>
             <div className="flex items-center gap-2">
-              <span className="font-mono font-bold tracking-tight text-white text-base">
+              <span className="font-mono font-bold tracking-tight text-white text-base group-hover:text-blue-400 transition-colors">
                 FUNDATIQ
-              </span>
-              <span className="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold tracking-wider uppercase bg-[#d4af37]/15 text-[#f1d279] border border-[#d4af37]/30">
-                GATED VAULT
               </span>
             </div>
             <p className="text-[11px] font-mono text-slate-400">
               Institutional Multi-Entity Liquidity Gateway
             </p>
           </div>
-        </div>
+        </button>
 
         {onBackToLanding && (
           <button
@@ -192,17 +193,12 @@ export const EnterpriseLoginView: React.FC<EnterpriseLoginViewProps> = ({
 
               {/* Password Field */}
               <div className="space-y-1.5">
-                <div className="flex items-center justify-between">
-                  <label
-                    htmlFor="corporate-password"
-                    className="block text-[11px] font-mono font-medium text-slate-300 uppercase tracking-wider"
-                  >
-                    {isEs ? 'Contraseña' : 'Password'}
-                  </label>
-                  <span className="text-[10px] font-mono text-slate-500">
-                    TLS 1.3 256-bit
-                  </span>
-                </div>
+                <label
+                  htmlFor="corporate-password"
+                  className="block text-[11px] font-mono font-medium text-slate-300 uppercase tracking-wider"
+                >
+                  {isEs ? 'Contraseña' : 'Password'}
+                </label>
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-500">
                     <KeyRound className="h-4 w-4" />
@@ -244,15 +240,6 @@ export const EnterpriseLoginView: React.FC<EnterpriseLoginViewProps> = ({
                 )}
               </button>
             </form>
-
-            {/* Compliance & Hardware Token Notice */}
-            <div className="mt-5 pt-4 border-t border-slate-800/80 flex items-center justify-between text-[10px] font-mono text-slate-400">
-              <span className="flex items-center gap-1">
-                <CheckCircle2 className="h-3 w-3 text-emerald-400" />
-                <span>FIPS 140-2 Level 3</span>
-              </span>
-              <span className="text-slate-500">SOC 2 Type II</span>
-            </div>
           </div>
 
           {/* 3. The "Illusion" of Registration / Need Access Section */}
@@ -285,16 +272,9 @@ export const EnterpriseLoginView: React.FC<EnterpriseLoginViewProps> = ({
       </main>
 
       {/* Footer Security Watermark */}
-      <footer className="relative z-10 w-full max-w-6xl mx-auto px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] font-mono text-slate-400 border-t border-slate-900">
+      <footer className="relative z-10 w-full max-w-6xl mx-auto px-6 py-4 flex items-center justify-center text-[11px] font-mono text-slate-400 border-t border-slate-900">
         <div>
           <span>Fundatiq Institutional Systems Inc.</span>
-        </div>
-        <div className="flex items-center gap-4">
-          <span>Encrypted Gateway (mTLS)</span>
-          <span className="text-emerald-400 flex items-center gap-1">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-            Active HSM Cluster
-          </span>
         </div>
       </footer>
 
@@ -417,8 +397,8 @@ export const EnterpriseLoginView: React.FC<EnterpriseLoginViewProps> = ({
                 </h3>
                 <p className="text-xs text-slate-300 max-w-sm mx-auto leading-relaxed">
                   {isEs
-                    ? `Hemos registrado la solicitud de ${corporateOrg}. Un oficial de cumplimiento se pondrá en contacto con ${workEmail} en un plazo máximo de 2 horas hábiles.`
-                    : `We have logged the request for ${corporateOrg}. A compliance officer will contact ${workEmail} within 2 business hours.`}
+                    ? `Hemos registrado la solicitud de ${corporateOrg}. Un oficial de cumplimiento se pondrá en contacto con ${workEmail} en un plazo de entre 24 y 48 horas hábiles.`
+                    : `We have logged the request for ${corporateOrg}. A compliance officer will contact ${workEmail} within 24 to 48 business hours.`}
                 </p>
                 <button
                   onClick={() => {

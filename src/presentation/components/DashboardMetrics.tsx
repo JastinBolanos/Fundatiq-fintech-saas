@@ -95,7 +95,7 @@ export const DashboardMetrics: React.FC<DashboardMetricsProps> = ({
               </div>
 
               <div className="space-y-1.5 my-2">
-                <div className="text-2xl lg:text-3xl font-extrabold text-blue-400 font-mono tracking-tight">
+                <div className="text-2xl lg:text-3xl font-semibold text-blue-400 font-mono tracking-tight">
                   {metric.value}
                 </div>
               </div>
@@ -130,7 +130,7 @@ export const DashboardMetrics: React.FC<DashboardMetricsProps> = ({
               </div>
 
               <div className="space-y-1.5 my-2">
-                <div className="text-2xl lg:text-3xl font-extrabold text-rose-400 font-mono tracking-tight">
+                <div className="text-2xl lg:text-3xl font-semibold text-rose-400 font-mono tracking-tight">
                   {metric.value}
                 </div>
               </div>
@@ -165,7 +165,7 @@ export const DashboardMetrics: React.FC<DashboardMetricsProps> = ({
               </div>
 
               <div className="space-y-1.5 my-2">
-                <div className="text-2xl lg:text-3xl font-extrabold text-emerald-400 font-mono tracking-tight">
+                <div className="text-2xl lg:text-3xl font-semibold text-emerald-400 font-mono tracking-tight">
                   {metric.value}
                 </div>
               </div>
@@ -200,7 +200,7 @@ export const DashboardMetrics: React.FC<DashboardMetricsProps> = ({
             </div>
 
             <div className="space-y-1.5 my-2">
-              <div className="text-2xl lg:text-3xl font-extrabold text-white font-mono tracking-tight">
+              <div className="text-2xl lg:text-3xl font-semibold text-white font-mono tracking-tight">
                 {metric.value}
               </div>
             </div>
