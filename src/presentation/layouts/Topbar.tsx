@@ -152,15 +152,6 @@ export const Topbar: React.FC<TopbarProps> = ({
 
       {/* Right: Operational Status, Actions & Controls */}
       <div className="flex items-center gap-2 sm:gap-3 shrink-0">
-        {/* Environment Status Badge */}
-        <div
-          id="topbar-environment-badge"
-          className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-amber-500/10 border border-amber-500/30 text-[10px] font-mono font-bold text-amber-500 dark:text-amber-300 shadow-xs"
-        >
-          <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
-          <span>ENVIRONMENT: SANDBOX</span>
-        </div>
-
         {/* Quick Language Toggle Button */}
         <button
           id="topbar-language-toggle-btn"
