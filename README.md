@@ -10,7 +10,18 @@
 >
 > 🟢 **[Ver Plataforma en Vivo (Producción)](https://fundatiq-treasury.institutional.network)**
 
+![Vista Previa de Fundatiq Dashboard](https://github.com/user-attachments/assets/4cafb032-13eb-4caf-9202-2d31f695083f)
+
 > ℹ️ *Nota de Arquitectura:* Los microservicios de liquidación bancaria central (SWIFT / ISO 20022) y bases de datos relacionales subyacentes residen en repositorios privados bajo redes corporativas segregadas por políticas de seguridad de la información y cumplimiento normativo. Este repositorio contiene la arquitectura cliente de grado empresarial, capa de orquestación perimetral, casos de uso de dominio e interfaces de telemetría analítica.
+
+---
+
+## 🎥 Demostración de la Plataforma
+
+**🎬 Recorrido Operativo de Fundatiq**  
+Explora la interfaz en tiempo real: desde la consolidación global de saldos y la ejecución de barridos automatizados (ZBA), hasta la simulación predictiva de liquidez y los flujos de cumplimiento normativo.
+
+https://github.com/user-attachments/assets/c80c1099-8d8a-415f-91f5-296c34791cb3
 
 ---
 
