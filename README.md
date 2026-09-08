@@ -21,7 +21,7 @@
 **🎬 Recorrido Operativo de Fundatiq**  
 Explora la interfaz en tiempo real: desde la consolidación global de saldos y la ejecución de barridos automatizados (ZBA), hasta la simulación predictiva de liquidez y los flujos de cumplimiento normativo.
 
-https://github.com/user-attachments/assets/c80c1099-8d8a-415f-91f5-296c34791cb3
+https://github.com/user-attachments/assets/d0253e79-fe3d-4154-ae07-1f21277cb293
 
 ---
 
